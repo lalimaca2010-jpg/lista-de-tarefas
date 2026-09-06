@@ -106,4 +106,5 @@ def concluir(id):
         "concluida": novo_estado
     })
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
