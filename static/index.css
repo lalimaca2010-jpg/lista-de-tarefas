@@ -54,3 +54,8 @@ li {
     cursor: pointer;
     font-weight: bold;
 }
+
+.adicionar {
+    display: flex;
+    justify-content: center;
+}
