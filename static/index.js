@@ -126,4 +126,3 @@ texto.addEventListener("click", function() {
 
         lista.appendChild(novaTarefa)
     })
-})
