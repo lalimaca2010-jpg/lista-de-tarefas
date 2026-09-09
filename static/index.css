@@ -1,27 +1,54 @@
 body {
     background-color: rgb(238, 40, 73);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
 }
 
 h1 {
-    color: rgb(0, 0, 0);
+    color: black;
+    text-align: center;
+    font-size: 40px;
 }
-button {
-    background-color: rgb(0, 0, 0);
+
+#entrada {
+    padding: 12px;
+    width: 300px;
+    border: none;
+    font-size: 16px;
+}
+
+#botao {
+    background-color: black;
     color: rgb(238, 40, 73);
     border: none;
-    padding: 10px 20px;
+    padding: 13px 20px;
     cursor: pointer;
+    font-size: 16px;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px auto;
+    width: 500px;
+}
+
+li {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .botao-remover {
     background-color: rgb(236, 234, 234);
     color: rgb(238, 40, 73);
     border: none;
-    padding: 1px 1px;
+    padding: 5px 10px;
     cursor: pointer;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
+    font-weight: bold;
 }
