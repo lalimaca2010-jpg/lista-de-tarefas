@@ -86,14 +86,21 @@ fetch("/tarefas")
             texto.style.textDecoration = "line-through"
         }
 
-        texto.addEventListener("click", function() {
+texto.addEventListener("click", function() {
 
     fetch(`/concluir/${dados.id}`, {
         method: "PUT"
     })
     .then(response => response.json())
-    .then(() => {
-        texto.style.textDecoration = "line-through"
+    .then(resultado => {
+
+        if (resultado.concluida === 1) {
+            texto.style.textDecoration = "line-through"
+        } else {
+            texto.style.textDecoration = "none"
+        }
+
+        dados.concluida = resultado.concluida
     })
 })
 
