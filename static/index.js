@@ -27,23 +27,27 @@ botao.addEventListener("click", function() {
         let texto = document.createElement("span")
         texto.textContent = dados.tarefa
 
-       texto.addEventListener("click", function() {
-
-    fetch(`/concluir/${dados.id}`, {
-        method: "PUT"
-    })
-    .then(response => response.json())
-    .then(resultado => {
-
-        if (resultado.concluida === 1) {
+        if (dados.concluida === 1) {
             texto.style.textDecoration = "line-through"
-        } else {
-            texto.style.textDecoration = "none"
         }
 
-        dados.concluida = resultado.concluida
-    })
-})
+        texto.addEventListener("click", function() {
+
+            fetch(`/concluir/${dados.id}`, {
+                method: "PUT"
+            })
+            .then(response => response.json())
+            .then(resultado => {
+
+                if (resultado.concluida === 1) {
+                    texto.style.textDecoration = "line-through"
+                } else {
+                    texto.style.textDecoration = "none"
+                }
+
+                dados.concluida = resultado.concluida
+            })
+        })
 
         let remover = document.createElement("button")
         remover.textContent = "X"
@@ -86,23 +90,23 @@ fetch("/tarefas")
             texto.style.textDecoration = "line-through"
         }
 
-texto.addEventListener("click", function() {
+        texto.addEventListener("click", function() {
 
-    fetch(`/concluir/${dados.id}`, {
-        method: "PUT"
-    })
-    .then(response => response.json())
-    .then(resultado => {
+            fetch(`/concluir/${dados.id}`, {
+                method: "PUT"
+            })
+            .then(response => response.json())
+            .then(resultado => {
 
-        if (resultado.concluida === 1) {
-            texto.style.textDecoration = "line-through"
-        } else {
-            texto.style.textDecoration = "none"
-        }
+                if (resultado.concluida === 1) {
+                    texto.style.textDecoration = "line-through"
+                } else {
+                    texto.style.textDecoration = "none"
+                }
 
-        dados.concluida = resultado.concluida
-    })
-})
+                dados.concluida = resultado.concluida
+            })
+        })
 
         let remover = document.createElement("button")
         remover.textContent = "X"
@@ -126,3 +130,4 @@ texto.addEventListener("click", function() {
 
         lista.appendChild(novaTarefa)
     })
+})
